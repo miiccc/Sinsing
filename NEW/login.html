@@ -1,0 +1,47 @@
+<!-- login.html (with side-by-side Registration) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Singsing</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="login">
+  <div class="login-shell">
+    <!-- LEFT: Login -->
+    <section class="panel-left">
+      <div class="content">
+        <div class="header-box">
+          <small>ADMIN</small>
+          <h2>LOGIN</h2>
+        </div>
+
+        <form onsubmit="event.preventDefault(); location.href='dashboard.html'">
+          <input class="field" name="username" placeholder="Username" required/>
+          <input class="field" name="password" type="password" placeholder="Password" required/>
+          <div class="forgot"><a href="#">Forgot Password?</a></div>
+          <button class="btn-red" type="submit">LOGIN</button>
+        </form>
+      </div>
+      <div class="footer">© 2021 Singsing</div>
+    </section>
+
+    <!-- RIGHT: Register -->
+    <section class="panel-right">
+      <div class="content">
+        <div class="header-box">
+          <h2>OR REGISTER ACCOUNT<br/>WHEN NOT HAVE YET</h2>
+        </div>
+
+        <form onsubmit="event.preventDefault(); alert('Registration submitted! (wire to your backend)');">
+          <input class="field-white" name="reg_username" placeholder="Username" required/>
+          <input class="field-white" name="reg_email" type="email" placeholder="E-Mail" required/>
+          <input class="field-white" name="reg_password" type="password" placeholder="Password" required minlength="6"/>
+          <input class="field-white" name="reg_confirm" type="password" placeholder="Confirm Password" required minlength="6" oninput="this.setCustomValidity(this.value!==this.form.reg_password.value?'Passwords do not match':'' )"/>
+          <button class="btn-white" type="submit">REGISTER</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
