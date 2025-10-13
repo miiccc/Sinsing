@@ -78,6 +78,14 @@
           </svg>
           <input id="search" type="text" placeholder="Search...">
         </div>
+        <form method="get" style="margin:12px 0">
+            <input type="search" name="q" value="{{ params.q }}" placeholder="Search…">
+            <input type="text"   name="category" value="{{ params.category }}" placeholder="Category">
+            <input type="number" step="any" name="price_min" value="{{ params.price_min }}" placeholder="Price min">
+            <input type="number" step="any" name="price_max" value="{{ params.price_max }}" placeholder="Price max">
+            <button type="submit">Filter</button>
+            <a href="?">Reset</a>
+          </form>
         <select id="year-select" class="year-select">
           <option>2025</option>
           <option>2024</option>
@@ -128,21 +136,6 @@
               <a href="?{{ params.urlencode }}&page={{ page_obj.previous_page_number }}">Prev</a>
             {% endif %}
 
-           <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-
-            {% if page_obj.has_next %}
-              <a href="?{{ params.urlencode }}&page={{ page_obj.next_page_number }}">Next</a>
-              <a href="?{{ params.urlencode }}&page={{ page_obj.paginator.num_pages }}">Last</a>
-              {% endif %}
-            </div>
-            <form method="get" style="margin:12px 0">
-              <input type="search" name="q" value="{{ params.q }}" placeholder="Search…">
-              <input type="text"   name="category" value="{{ params.category }}" placeholder="Category">
-              <input type="number" step="any" name="price_min" value="{{ params.price_min }}" placeholder="Price min">
-              <input type="number" step="any" name="price_max" value="{{ params.price_max }}" placeholder="Price max">
-              <button type="submit">Filter</button>
-              <a href="?">Reset</a>
-            </form>
             <p>
               Showing {{ page_obj.paginator.count }} match{{ page_obj.paginator.count|pluralize }}.
             </p>
