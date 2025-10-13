@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Singsino Admin</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="{% load static %}" />
   <style>
     body{display:grid;place-items:center;min-height:100vh;background:var(--bg);color:var(--ink);font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Arial}
     .box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow);text-align:center}
