@@ -67,7 +67,7 @@ DATABASES = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "singsing" / "templates"],  # ✅ your templates folder],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,11 +117,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATES = [{
-    "BACKEND": "django.template.backends.django.DjangoTemplates",
-    "DIRS": [BASE_DIR / "singsing" / "templates"],  # ✅ your templates folder
-    "APP_DIRS": True,
-}]
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [ BASE_DIR / "singsing" / "static" ]  # if you keep custom CSS/JS
