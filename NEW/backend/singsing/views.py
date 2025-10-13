@@ -4,7 +4,14 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 
 CSV_PATH = Path(__file__).resolve().parent / "database" / "DatasetForBackend.csv"
-
+def index(request):      return render(request, "index.html")
+def login_view(request): return render(request, "login.html")
+def logout_view(request):return render(request, "logout.html")
+def dashboard(request):  return render(request, "dashboard.html")
+def indepth(request):    return render(request, "indepth.html")
+def promotions(request): return render(request, "promotions.html")
+def settings_view(request): return render(request, "settings.html")
+def profile(request):    return render(request, "profile.html")
 def products(request):
     with open(CSV_PATH, encoding="utf-8-sig", newline="") as f:
         reader = csv.reader(f)
