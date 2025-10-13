@@ -243,7 +243,7 @@ input::placeholder{color:#9ca3af}
 /* ------------- Login page ------------- */
 body.login{
   min-height:100vh; display:flex; align-items:center; justify-content:center;
-  background:url("singsing.jpg") center/cover no-repeat fixed; position:relative;
+  background:url("/static/singsing.jpg") center/cover no-repeat fixed; position:relative;
 }
 body.login::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
 .login-shell{
