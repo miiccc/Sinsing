@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Page background with overlay */
+    body.login {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url("singsing.jpg") center/cover no-repeat fixed;
+      position: relative;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    body.login::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+    }
+
+    /* Two-column container */
+    .login-shell {
+      position: relative; z-index: 1;
+      width: min(1150px, 92vw);
+      display: grid; grid-template-columns: 1fr 1fr;
+      border-radius: 6px; overflow: hidden;
+    }
+
+    /* Panels */
+    .panel-left {
+      backdrop-filter: blur(2px);
+      background: rgba(255,255,255,.92);
+      padding: 34px 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* footer sticks to bottom */
+    }
+    .panel-right {
+      backdrop-filter: blur(2px);
+      background: rgba(226,33,28,.92);
+      color: #fff;
+      padding: 34px 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Centered content block for perfect alignment */
+    .content { max-width: 560px; margin: 0 auto; width: 100%; }
+
+    /* Headers */
+    .header-box {
+      width: 100%;
+      padding: 16px 18px 18px;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+    /* Login header: red rectangle, white text */
+    .panel-left .header-box { background: #e2211c; color: #fff; }
+    .panel-left .header-box small { display:block; font-weight:700; }
+    .panel-left .header-box h2 { margin:4px 0 0; font-size:28px; }
+
+    /* Register header: white background, red text */
+    .panel-right .header-box { background:#fff; color:#e2211c; font-weight:800; margin-bottom:22px; }
+    .panel-right .header-box h2 { margin:0; font-size:22px; line-height:1.3; }
+
+    /* Inputs & buttons (same width) */
+    .field, .field-white, .btn-red, .btn-white { width:100%; }
+    .field, .field-white {
+      border:0; border-radius:6px; padding:12px 14px; margin:12px 0;
+      box-shadow:0 0 0 1px #e5e7eb inset; background:#fff; color:#111;
+    }
+    .btn-red {
+      border:0; border-radius:6px; padding:13px 14px; margin-top:10px;
+      background:#e2211c; color:#fff; font-weight:800; cursor:pointer;
+    }
+    .btn-red:hover { background:#cc1d19; }
+    .btn-white {
+      border:0; border-radius:6px; padding:13px 14px; margin-top:10px;
+      background:#fff; color:#e2211c; font-weight:800; cursor:pointer;
+    }
+    .btn-white:hover { background:#f3f4f6; }
+
+    /* Forgot password */
+    .forgot { margin:6px 0 -2px; text-align:right; }
+    .forgot a { font-size:12px; color:#3b82f6; text-decoration:none; }
+    .forgot a:hover { text-decoration:underline; }
+
+    /* Footer centered at bottom of left panel */
+    .footer { text-align:center; color:#e2211c; font-weight:700; margin-top:20px; font-size:12px; }
+
+    /* Responsive */
+    @media (max-width: 860px) { .login-shell { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="login">
+  <div class="login-shell">
+    <!-- LEFT: Login -->
+    <section class="panel-left">
+      <div class="content">
+        <div class="header-box">
+          <small>ADMIN</small>
+          <h2>LOGIN</h2>
+        </div>
+
+        <input class="field" placeholder="Username" />
+        <input class="field" type="password" placeholder="Password" />
+
+        <div class="forgot"><a href="#">Forgot Password?</a></div>
+
+        <button class="btn-red" onclick="location.href='dashboard.html'">LOGIN</button>
+      </div>
+      <div class="footer">© 2021</div>
+    </section>
+
+    <!-- RIGHT: Register -->
+    <section class="panel-right">
+      <div class="content">
+        <div class="header-box">
+          <h2>OR REGISTER ACCOUNT<br/>WHEN NOT HAVE YET</h2>
+        </div>
+
+        <input class="field-white" placeholder="Username" />
+        <input class="field-white" placeholder="E-Mail" />
+        <input class="field-white" type="password" placeholder="Password" />
+        <input class="field-white" type="password" placeholder="Confirm Password" />
+
+        <button class="btn-white" onclick="location.href='dashboard.html'">REGISTER</button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
